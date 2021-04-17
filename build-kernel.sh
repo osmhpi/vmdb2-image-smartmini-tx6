@@ -36,8 +36,8 @@ cd ${KERNEL_DIR}
 #make ARCH=arm CROSS_COMPILE="${KERNEL_CROSS_COMPILE}" LD="${KERNEL_LD}" modules
 #make ARCH=arm CROSS_COMPILE="${KERNEL_CROSS_COMPILE}" LD="${KERNEL_LD}" dtbs
 
-make ARCH=arm CROSS_COMPILE="${KERNEL_CROSS_COMPILE}" LD="${KERNEL_LD}" bindeb-pkg
+make ARCH=arm CROSS_COMPILE="${KERNEL_CROSS_COMPILE}" LD="${KERNEL_LD}" \
+    KBUILD_DEBARCH=armhf bindeb-pkg
 
 rm -f ${MYDIR}/${DEB_DIR}/linux-image-*.deb
 cp -v ../linux-image-*.deb ${MYDIR}/${DEB_DIR}/linux-image-tx6-latest.deb
-
